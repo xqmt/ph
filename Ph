@@ -17,7 +17,7 @@ local Window = Library:CreateWindow({
     AutoShow = true,
     Resizable = true,
     ShowCustomCursor = true,
-    UnlockMouseWhileOpen = false,
+    UnlockMouseWhileOpen = true,
     NotifySide = "Left",
     TabPadding = 8,
     MenuFadeTime = 0.2
@@ -728,20 +728,20 @@ local Tabs = {
     Movement = Window:AddTab("Move Anti-aim"),       
     World = Window:AddTab("World"),         
     Addons = Window:AddTab("Addons"),       
-    ['UI Settings'] = Window:AddTab("UI Setting")   
+    ['UI'] = Window:AddTab("UI")   
 }
 
 -- === TAB 0: MOBILE AIMBOT CONFIGURATION ===
-local MobileAimbotBox = Tabs.Aimbot:AddLeftGroupbox("Mobile Camera Aimbot")
+local MobileAimbotBox = Tabs.Aimbot:AddLeftGroupbox("Aimbot")
 local MobileAimbotSettings = Tabs.Aimbot:AddRightGroupbox("Aimbot Options")
 
-MobileAimbotBox:AddToggle("MobileAimbotToggle", { Text = "Enable Mobile Aimbot", Default = false })
+MobileAimbotBox:AddToggle("MobileAimbotToggle", { Text = "Enable Aimbot", Default = false })
 Toggles.MobileAimbotToggle:OnChanged(function() _G.MobileAimbotEnabled = Toggles.MobileAimbotToggle.Value end)
 
 MobileAimbotBox:AddSlider("AimbotSmoothSlider", { Text = "Aimbot Smoothness", Default = 0.1, Min = 0.01, Max = 1, Rounding = 2 })
 Options.AimbotSmoothSlider:OnChanged(function() _G.AimbotSmoothness = Options.AimbotSmoothSlider.Value end)
 
-MobileAimbotBox:AddToggle("AutoPredictionToggle", { Text = "Enable Auto Prediction (Ping)", Default = false })
+MobileAimbotBox:AddToggle("AutoPredictionToggle", { Text = "Enable Auto Prediction", Default = false })
 Toggles.AutoPredictionToggle:OnChanged(function() _G.AutoPredictionEnabled = Toggles.AutoPredictionToggle.Value end)
 
 MobileAimbotSettings:AddDropdown("MobileTargetPartDropdown", { Text = "Aimbot Target Part", Values = {"Head", "HumanoidRootPart"}, Default = 1, Multi = false })
