@@ -728,7 +728,7 @@ local Tabs = {
     Movement = Window:AddTab("Move Anti-aim"),       
     World = Window:AddTab("World"),         
     Addons = Window:AddTab("Addons"),       
-    ['UI'] = Window:AddTab("UI")   
+    ['UI Setting'] = Window:AddTab("UI")   
 }
 
 -- === TAB 0: MOBILE AIMBOT CONFIGURATION ===
